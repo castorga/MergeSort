@@ -11,29 +11,70 @@ Se comparan y se combinan las listas para producir nuevas sublistas hasta que so
 
 
 ```markdown
-Syntax highlighted code block
+void MergeSort(int Arreglo[], int Izq, int Der) {
+    if(Izq < Der) {
+        int Mitad = Izq + (Der - Izq)/2;
+        MergeSort(Arreglo, Izq, Mitad);
+        MergeSort(Arreglo, Mitad + 1, Der);
+        Merge(Arreglo, Izq, Mitad, Der);
+    }
+}
 
-# Header 1
-## Header 2
-### Header 3
+void Merge(int Arreglo[], int Izq, int Mitad, int Der) {
+    int i, j, k;
+    int N1 = Mitad - Izq + 1;
+    int N2 = Der - Mitad;
 
-- Bulleted
-- List
+    int Arr_Izq[N1], Arr_Der[N2];
 
-1. Numbered
-2. List
+    for(i = 0; i < N1; i++)
+        Arr_Izq[i] = Arreglo[Izq + i];
+    for(j = 0; j < N2; j++)
+        Arr_Der[j] = Arreglo[Mitad + 1 + j];
 
-**Bold** and _Italic_ and `Code` text
+    i = 0;
+    j = 0;
+    k = Izq;
 
-[Link](url) and ![Image](src)
+    while(i < N1 && j < N2) {
+        if(Arr_Izq[i] <= Arr_Der[j]) {
+            Arreglo[k] = Arr_Izq[i];
+            i++;
+        } else {
+            Arreglo[k] = Arr_Der[j];
+            j++;
+        }
+        k++;
+    }
+
+    while(i < N1) {
+        Arreglo[k] = Arr_Izq[i];
+        i++;
+        k++;
+    }
+    while(j < N2) {
+        Arreglo[k] = Arr_Der[j];
+        j++;
+        k++;
+    }
+}
+
 ```
+![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/618px-Merge_sort_algorithm_diagram.svg.png)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### Ventajas
+```markdown
+-Complejidad de tiempo en el mejor caso, peor caso y caso intermedio siempre será O (n logn)
+-Es estable, por lo que se puede utilizar para la implementación de otro método.
+-Considerado como la mejor forma de ordenar una lista enlazada.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/castorga/MergeSort/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```
 
-### Support or Contact
+### Desventajas
+```markdown
+Puede ser mas lento que otros tipos de ordenamiento debido a que el tiempo de ejecución en todos los casos es típicamente el mismo.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+
