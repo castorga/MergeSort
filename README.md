@@ -1,12 +1,14 @@
-## Welcome to GitHub Pages
+## Metodo de Ordenamiento MergeSort
 
-You can use the [editor on GitHub](https://github.com/castorga/MergeSort/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+MergeSort es un algoritmo recursivo, de tipo "Divide y vencerás" inventado por el científico John Von Neumann en el año de 1945. La contribución principal de este algoritmo es el hecho de que permite almacenar el programa en la misma memoria que los datos.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Funcionamiento
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Se divide la lista desorganizada en un numero de n cantidad de sublistas. Cada una de estas teniendo solo un elemento.
+
+Se comparan y se combinan las listas para producir nuevas sublistas hasta que solo quede una, que terminara siendo la lista ordenada.
+
 
 ```markdown
 Syntax highlighted code block
