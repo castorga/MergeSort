@@ -62,8 +62,6 @@ void Merge(int Arreglo[], int Izq, int Mitad, int Der) {
 ```
 ![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/618px-Merge_sort_algorithm_diagram.svg.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
 ### Ventajas
 ```markdown
 -Complejidad de tiempo en el mejor caso, peor caso y caso intermedio siempre será O (n logn)
